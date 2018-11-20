@@ -19,15 +19,14 @@ public class BankAccount {
 	public String name; 
 	private double accountBalance;
 	private double lowestBalance; 
-	private double withdraw;
-	private double deposit; 
+	//private double withdraw;
+	//private double deposit; 
 	
-	public BankAccount (String n, double a, double l, double d, double w) {
+	public BankAccount (String n, double a, double l) {
 		name = n;
 		setBalance(a); 
 		setLowest(l);
-		setDeposit(d);
-		setWithdrawal(w); 
+		
 		
 	}
 	public BankAccount (String n, double a) {
@@ -93,12 +92,15 @@ public class BankAccount {
 	public double getDeposit () {
 		return accountBalance; 
 	}
-	NumberFormat formatter = NumberFormat.getCurrencyInstance();
-	String accountString = formatter.format(accountBalance);
-	String lowestString = formatter.format(lowestBalance);
+	//NumberFormat formatter = NumberFormat.getCurrencyInstance();
+	//String accountString = formatter.format(accountBalance);
+	//String lowestString = formatter.format(lowestBalance);
 	
 	
 	public String toString() {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String accountString = formatter.format(accountBalance);
+		String lowestString = formatter.format(lowestBalance);
 		return name + "'s account holds " + accountString + 
 				" with the lowest allowable amount of " + lowestString +
 				". \nAfter withdrawing/depositing"; 
